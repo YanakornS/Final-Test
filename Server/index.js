@@ -23,7 +23,7 @@ app.use(cors({ origin: BASE_URL, credentials: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome  To MERN E-Commerce </h1>");
+  res.send("<h1>Welcome  To Nakhon Pathom Airline </h1>");
 });
 
 //Use Router

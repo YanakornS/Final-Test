@@ -131,7 +131,6 @@ exports.updateFlight = async (req, res) => {
 };
 
 // ฟังก์ชันลบเที่ยวบิน
-// ฟังก์ชันลบเที่ยวบิน
 exports.deleteFlight = async (req, res) => {
   const { flightId } = req.params;
 

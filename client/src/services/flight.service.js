@@ -1,6 +1,6 @@
 import axios from "axios";
-
-const API_URL = "http://localhost:5000/api/v1/flights"; // เปลี่ยนให้ตรงกับ URL ที่คุณตั้งใน backend
+import api from "./api";
+const API_URL = "flights"; // เปลี่ยนให้ตรงกับ URL ที่คุณตั้งใน backend
 
 // ฟังก์ชันดึงข้อมูลเที่ยวบินทั้งหมด
 export const getFlights = async () => {

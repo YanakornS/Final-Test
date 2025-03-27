@@ -9,6 +9,7 @@ const FlightCard = ({ flightId }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("Fetching Flight ID:", flightId);
     if (!flightId) {
       console.error("Flight ID is missing");
       setLoading(false);
@@ -17,7 +18,8 @@ const FlightCard = ({ flightId }) => {
 
     const fetchFlightData = async () => {
       try {
-        const data = await FlightService.getFlightById(flightId); // เรียกใช้ Service ที่เราเขียนไว้
+        const data = await FlightService.getFlightById(flightId);
+        console.log("Flight Data:", data); // เช็คว่าข้อมูลมาไหม
         setFlight(data);
         setLoading(false);
       } catch (error) {
@@ -26,7 +28,7 @@ const FlightCard = ({ flightId }) => {
       }
     };
 
-    fetchFlightData(); // ดึงข้อมูลเที่ยวบินเมื่อคอมโพเนนต์โหลด
+    fetchFlightData();
   }, [flightId]);
 
   const handleDelete = async (id) => {
