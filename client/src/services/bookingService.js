@@ -6,7 +6,7 @@ const API_URL = "/booking";
 
 const getBookings = async () => {
   try {
-    const response = await axios.get(`${API_URL}/bookings`, {
+    const response = await api.get(`${API_URL}/bookings`, {
       headers: { "x-access-token": localStorage.getItem("token") },
     });
     return response.data;
@@ -17,7 +17,7 @@ const getBookings = async () => {
 
 const bookFlight = async (flightId, seatNumber) => {
   try {
-    const response = await axios.post(
+    const response = await api.post(
       `${API_URL}/book`,
       { flightId, seatNumber },
       {
@@ -32,7 +32,7 @@ const bookFlight = async (flightId, seatNumber) => {
 
 const deleteBooking = async (bookingId) => {
   try {
-    const response = await axios.delete(`${API_URL}/booking/${bookingId}`, {
+    const response = await api.delete(`${API_URL}/booking/${bookingId}`, {
       headers: { "x-access-token": localStorage.getItem("token") },
     });
     return response.data;
