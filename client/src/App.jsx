@@ -6,6 +6,7 @@ import BookingPage from "./pages/BookingPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import FlightCard from "./pages/FlightCard";
+import FlightList from "./pages/FlightList";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} Route />
         <Route path="/register" element={<RegisterPage />} Route />
         <Route path="/flightCard" element={<FlightCard />} Route />
+        <Route path="/FlightList" element={<FlightList />} Route />
       </Routes>
     </div>
   );

@@ -1,11 +1,11 @@
 import axios from "axios";
-import api from "./api";
-const API_URL = "flights"; // เปลี่ยนให้ตรงกับ URL ที่คุณตั้งใน backend
+
+const API_URL = "http://localhost:5000/api/v1/flights"; // เปลี่ยนให้ตรงกับ backend
 
 // ฟังก์ชันดึงข้อมูลเที่ยวบินทั้งหมด
 export const getFlights = async () => {
   try {
-    const response = await axios.get(API_URL); // Use axios instead of api
+    const response = await axios.get(API_URL);
     return response.data;
   } catch (error) {
     console.error("Error fetching flights:", error);
@@ -13,13 +13,13 @@ export const getFlights = async () => {
   }
 };
 
-// ฟังก์ชันดึงข้อมูลเที่ยวบินตาม ID
-export const getFlightById = async (flightId) => {
+// ฟังก์ชันดึงเที่ยวบินตาม ID
+export const getFlightById = async (_id) => {
   try {
-    const response = await axios.get(`${API_URL}/${flightId}`);
+    const response = await axios.get(`${API_URL}/${_id}`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching flight by ID:", error);
+    console.error("Error fetching flight:", error);
     throw error;
   }
 };

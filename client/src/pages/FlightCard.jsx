@@ -62,12 +62,6 @@ const FlightCard = ({ flightId }) => {
 
   return (
     <div className="card">
-      <figure>
-        <img
-          src={flight?.image || "https://via.placeholder.com/150"}
-          alt="Flight"
-        />
-      </figure>
       <div className="card-body">
         <h2 className="card-title">{flight?.flightName}</h2>
         <p>From: {flight?.departureAirport}</p>

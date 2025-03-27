@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { FaPlaneDeparture } from "react-icons/fa"; // ใช้ React Icons
 import Tokenservice from "../services/Token.service"; // Import the token service
+import LoginPage from "../pages/LoginPage";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -45,12 +46,9 @@ const Navbar = () => {
                 />
               </div>
             ) : (
-              <button
-                onClick={handleLogin}
-                className="btn btn-primary rounded-lg px-4 py-2"
-              >
+              <a href="/login" className="btn btn-primary rounded-lg px-4 py-2">
                 Login
-              </button>
+              </a>
             )}
           </div>
           {user && (
